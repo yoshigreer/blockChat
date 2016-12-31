@@ -7,13 +7,8 @@
       //take open modal
       var modal = $uibModal.open({
         templateUrl: "/templates/modal.html",
-        //controller: 'ModalInstanceCtrl',
+        controller: 'ModalInstanceCtrl',
         //controllerAs: '$ctrl'
-        controller: {
-          Room: function () {
-            return Room;
-          }
-        }
       });
     };
   }
