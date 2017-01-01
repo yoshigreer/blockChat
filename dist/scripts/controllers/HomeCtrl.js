@@ -4,7 +4,7 @@
     ctrl.rooms = Room.all
 
     ctrl.openModal = function() {
-      //take open modal
+      //open modal
       var modal = $uibModal.open({
         templateUrl: '/templates/modal.html',
         controller: 'ModalInstanceCtrl',
@@ -20,17 +20,17 @@
 
 
 (function() {
-  function ModalInstanceCtrl($uibModalInstance, Room) {
+  function ModalInstanceCtrl($uibModalInstance, Room, $scope) {
     var ctrl = this;
-
+    ctrl.rooms = Room.all;
 
     ctrl.addRoom = function() {
-
+      //add room name
       ctrl.rooms.$add({
-        $id: 'id',
-        $value: 'test'
+        $value: $scope.roomName
       });
-
+      //close modal window
+      $uibModalInstance.dismiss();
     };
 
     ctrl.closeModal = function() {
@@ -41,5 +41,5 @@
   }
   angular
     .module('blocChat')
-    .controller('ModalInstanceCtrl', ['$uibModalInstance', 'Room', ModalInstanceCtrl]);
+    .controller('ModalInstanceCtrl', ['$uibModalInstance', 'Room', '$scope', ModalInstanceCtrl]);
 })();
