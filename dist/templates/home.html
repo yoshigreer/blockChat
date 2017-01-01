@@ -1,7 +1,7 @@
-<nav class="navbar">
+<div class="sideBar" ng-controller="HomeCtrl as $ctrl">
   <h1> Bloc Chat</h1>
-  <p ng-repeat="room in home.rooms">
+  <button type="button" ng-click="$ctrl.openModal()">New Room</button>
+  <p ng-repeat="room in $ctrl.rooms">
     {{ room.$value }}
   </p>
-
-</nav>
+</div>
