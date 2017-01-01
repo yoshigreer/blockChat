@@ -1,14 +1,14 @@
 (function() {
   function HomeCtrl(Room, $uibModal) {
-    var $ctrl = this;
-    $ctrl.rooms = Room.all
+    var ctrl = this;
+    ctrl.rooms = Room.all
 
-    $ctrl.openModal = function() {
+    ctrl.openModal = function() {
       //take open modal
       var modal = $uibModal.open({
-        templateUrl: "/templates/modal.html",
+        templateUrl: '/templates/modal.html',
         controller: 'ModalInstanceCtrl',
-        //controllerAs: '$ctrl'
+        controllerAs: '$ctrl'
       });
     };
   }
@@ -21,43 +21,25 @@
 
 (function() {
   function ModalInstanceCtrl($uibModalInstance, Room) {
-    var $ctrl = this
+    var ctrl = this;
 
-    /*
-    $ctrl.addRoom = function() {
-      $ctrl.rooms.$add({
-        //$id: "id",
-        $value: "test"
+
+    ctrl.addRoom = function() {
+
+      ctrl.rooms.$add({
+        $id: 'id',
+        $value: 'test'
       });
+
     };
-    $ctrl.closeModal = function() {
-      console.log("cancel");
+
+    ctrl.closeModal = function() {
       //close modal window
       $uibModalInstance.dismiss();
     };
-    */
+
   }
   angular
     .module('blocChat')
     .controller('ModalInstanceCtrl', ['$uibModalInstance', 'Room', ModalInstanceCtrl]);
-})
-
-
-/*
-//code copied directly from angular link
-angular.module('blocChat').controller('ModalInstanceCtrl', function ($uibModalInstance, items) {
-  var $ctrl = this;
-  $ctrl.items = items;
-  $ctrl.selected = {
-    item: $ctrl.items[0]
-  };
-
-  $ctrl.ok = function () {
-    $uibModalInstance.close($ctrl.selected.item);
-  };
-
-  $ctrl.cancel = function () {
-    $uibModalInstance.dismiss('cancel');
-  };
-});
-*/
+})();
