@@ -5,8 +5,7 @@
 
     return {
       getByRoomId: function (roomId) {
-        messages.orderByChild('roomId').equalTo('room1');
-        console.log(messages);
+        ref.orderByChild('roomId').equalTo(roomId);
       }
     };
   }
