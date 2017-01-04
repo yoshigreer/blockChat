@@ -1,7 +1,22 @@
-<div class="sideBar" ng-controller="HomeCtrl as $ctrl">
+<div class="sideBar">
   <h1> Bloc Chat</h1>
-  <button type="button" ng-click="$ctrl.openModal()">New Room</button>
-  <p ng-repeat="room in $ctrl.rooms">
+  <button type="button" ng-click="home.openModal()">New Room</button>
+  <p ng-repeat="room in home.rooms" ng-click="home.showRoom(room)">
     {{ room.$value }}
   </p>
+</div>
+
+<div class="chatroom">
+  <h1>{{ home.currentRoomName }}</h1>
+  <div ng-repeat="message in home.messages">
+    <p class="username">
+      {{ message.username }}
+    </p>
+    <p class="time">
+      {{ message.sentAt }}
+    </p>
+    <p class="message">
+      {{ message.content }}
+    </p>
+  </div>
 </div>
