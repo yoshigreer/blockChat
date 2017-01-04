@@ -2,7 +2,7 @@
   function HomeCtrl(Room, Message, $uibModal) {
     var ctrl = this;
     ctrl.rooms = Room.all;
-    ctrl.messages = Message.getByRoomId('room1');
+    //ctrl.messages = Message.getByRoomId('room1');
 
     ctrl.openModal = function() {
       //open modal
@@ -11,6 +11,13 @@
         controller: 'ModalInstanceCtrl',
         controllerAs: '$ctrl'
       });
+    };
+
+    ctrl.showRoom = function($event) {
+      var roomName = $event.currentTarget.innerHTML;
+      //var roomRef = firebase.database().ref(roomName).parent;
+      ctrl.messages = Message.getByRoomId('room1');
+      console.log(ctrl.rooms);
     };
   }
 
