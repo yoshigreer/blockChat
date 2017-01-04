@@ -1,12 +1,13 @@
 <div class="sideBar">
   <h1> Bloc Chat</h1>
   <button type="button" ng-click="home.openModal()">New Room</button>
-  <p ng-repeat="room in home.rooms" ng-click="home.showRoom($event)">
+  <p ng-repeat="room in home.rooms" ng-click="home.showRoom(room)">
     {{ room.$value }}
   </p>
 </div>
 
 <div class="chatroom">
+  {{home.currentRoomName}}
   <p ng-repeat="message in home.messages">
   {{ message.content }}
   </p>

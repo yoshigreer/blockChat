@@ -13,11 +13,15 @@
       });
     };
 
-    ctrl.showRoom = function($event) {
-      var roomName = $event.currentTarget.innerHTML;
+    ctrl.showRoom = function(room) {
+      //console.log(room);
+      console.log($scope);
+      //var roomId = room.$id;
+      //var roomName = $event.currentTarget.innerHTML;
       //var roomRef = firebase.database().ref(roomName).parent;
-      ctrl.messages = Message.getByRoomId('room1');
-      console.log(ctrl.rooms);
+      ctrl.currentRoomName = room.$value;
+      ctrl.messages = Message.getByRoomId(room.$id);
+      console.log();
     };
   }
 
