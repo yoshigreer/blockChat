@@ -14,11 +14,6 @@
     };
 
     ctrl.showRoom = function(room) {
-      //console.log(room);
-      console.log($scope);
-      //var roomId = room.$id;
-      //var roomName = $event.currentTarget.innerHTML;
-      //var roomRef = firebase.database().ref(roomName).parent;
       ctrl.currentRoomName = room.$value;
       ctrl.messages = Message.getByRoomId(room.$id);
       console.log();

@@ -7,8 +7,16 @@
 </div>
 
 <div class="chatroom">
-  {{home.currentRoomName}}
-  <p ng-repeat="message in home.messages">
-  {{ message.content }}
-  </p>
+  <h1>{{ home.currentRoomName }}</h1>
+  <div ng-repeat="message in home.messages">
+    <p class="username">
+      {{ message.username }}
+    </p>
+    <p class="time">
+      {{ message.sentAt }}
+    </p>
+    <p class="message">
+      {{ message.content }}
+    </p>
+  </div>
 </div>

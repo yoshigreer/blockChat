@@ -12,8 +12,16 @@
   top: 0;
   bottom: 0;
   right: 0;
-  color: green;
-  background-color: yellow;
+  color: black;
+  background-color: gray;
   position: fixed;
   width: 80%;
+}
+
+.chatroom .username {
+  font-weight: bold;
+}
+
+p.time {
+  font-size: 75%;
 }
