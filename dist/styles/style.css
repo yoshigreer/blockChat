@@ -10,8 +10,8 @@
 
 .chatroom {
   top: 0;
-  bottom: 0;
   right: 0;
+  bottom: 0;
   color: black;
   background-color: gray;
   position: fixed;
@@ -24,4 +24,12 @@
 
 p.time {
   font-size: 75%;
+}
+
+.createMessage {
+  bottom: 0;
+  right: 0;
+  width: 80%;
+  position: fixed;
+  padding: 10px;
 }
