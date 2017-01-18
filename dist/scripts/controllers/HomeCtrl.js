@@ -1,5 +1,5 @@
 (function() {
-  function HomeCtrl(Room, Message, $uibModal, $cookies, $scope) {
+  function HomeCtrl(Room, Message, $uibModal, $cookies, $scope, $location, $anchorScroll) {
     var ctrl = this;
     ctrl.rooms = Room.all;
 
@@ -16,6 +16,10 @@
       ctrl.currentRoomName = room.$value;
       ctrl.currentRoomId = room.$id;
       ctrl.messages = Message.getByRoomId(ctrl.currentRoomId);
+      //var offsetHeight = document.getElementById('chatroom').offsetHeight;
+      //document.body.scrollTop = document.body.scrollHeight - document.body.clientHeight;
+      $location.hash('bottom');
+      $anchorScroll();
     };
 
     ctrl.sendMessage = function(newMessage) {
@@ -43,7 +47,7 @@
 
   angular
     .module('blocChat')
-    .controller('HomeCtrl', ['Room', 'Message', '$uibModal', '$cookies', '$scope', HomeCtrl]);
+    .controller('HomeCtrl', ['Room', 'Message', '$uibModal', '$cookies', '$scope', '$location', '$anchorScroll', HomeCtrl]);
 })();
 
 

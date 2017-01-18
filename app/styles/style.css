@@ -8,16 +8,17 @@
   position: fixed;
 }
 
+body {
+  background-color: gray !important;
+}
+
 .chatroom {
-  top: 0;
-  right: 0;
-  bottom: 50px;
   color: black;
-  background-color: gray;
-  background-attachment: fixed;
-  position: absolute;;
   padding-left: 10px;
+  margin-bottom: 50px;
   width: 80%;
+  margin-left: 20%;
+
 }
 
 .chatroom .username {
