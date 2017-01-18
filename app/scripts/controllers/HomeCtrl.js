@@ -1,5 +1,5 @@
 (function() {
-  function HomeCtrl(Room, Message, $uibModal, $cookies) {
+  function HomeCtrl(Room, Message, $uibModal, $cookies, $scope) {
     var ctrl = this;
     ctrl.rooms = Room.all;
 
@@ -23,6 +23,9 @@
       var hours = date.getHours();
       if (hours > 12) {
         hours = hours - 12;
+        if (hours < 10) {
+          hours = "0" + hours;
+        }
       }
       var minutes = date.getMinutes();
 
@@ -32,14 +35,15 @@
         sentAt: hours + ':' + minutes,
         username: $cookies.get('blocChatCurrentUser'),
       }
-      
       Message.send(messageObject);
+      $scope.newMessage = "";
+      $scope.form.$setPristine();
     };
   }
 
   angular
     .module('blocChat')
-    .controller('HomeCtrl', ['Room', 'Message', '$uibModal', '$cookies', HomeCtrl]);
+    .controller('HomeCtrl', ['Room', 'Message', '$uibModal', '$cookies', '$scope', HomeCtrl]);
 })();
 
 

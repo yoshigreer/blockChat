@@ -11,10 +11,12 @@
 .chatroom {
   top: 0;
   right: 0;
-  bottom: 0;
+  bottom: 50px;
   color: black;
   background-color: gray;
-  position: fixed;
+  background-attachment: fixed;
+  position: absolute;;
+  padding-left: 10px;
   width: 80%;
 }
 
