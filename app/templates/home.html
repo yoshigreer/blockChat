@@ -1,7 +1,7 @@
 <div class="sideBar">
   <h1> Bloc Chat</h1>
-  <button type="button" ng-click="home.openModal()">New Room</button>
-  <p ng-repeat="room in home.rooms" ng-click="home.showRoom(room)">
+  <button type="button" ng-click="home.openModal()" class="btn btn-default butt" >New Room</button>
+  <p ng-repeat="room in home.rooms" ng-click="home.showRoom(room)" class="room bg-primary">
     {{ room.$value }}
   </p>
 </div>
@@ -9,11 +9,9 @@
 <div class="chatroom">
   <h1>{{ home.currentRoomName }}</h1>
   <div ng-repeat="message in home.messages">
-    <p class="username">
+    <p class="username bg-danger">
       {{ message.username }}
-    </p>
-    <p class="time">
-      {{ message.sentAt }}
+      <span class="time"> {{ message.sentAt }} </span>
     </p>
     <p class="message">
       {{ message.content }}

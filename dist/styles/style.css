@@ -12,6 +12,19 @@ body {
   background-color: gray !important;
 }
 
+.room {
+  padding-left: 10px;
+}
+
+.room:hover {
+  cursor: pointer;
+}
+
+.butt {
+  margin-left: 10px;
+  margin-bottom: 10px !important;
+}
+
 .chatroom {
   color: black;
   padding-left: 10px;
@@ -21,12 +34,13 @@ body {
 
 }
 
-.chatroom .username {
+.username {
   font-weight: bold;
 }
 
-p.time {
+.time {
   font-size: 75%;
+  color: DarkSlateGray;
 }
 
 .createMessage {
