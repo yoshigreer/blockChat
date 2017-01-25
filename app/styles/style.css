@@ -8,20 +8,45 @@
   position: fixed;
 }
 
-.chatroom {
-  top: 0;
-  bottom: 0;
-  right: 0;
-  color: black;
-  background-color: gray;
-  position: fixed;
-  width: 80%;
+body {
+  background-color: gray !important;
 }
 
-.chatroom .username {
+.room {
+  padding-left: 10px;
+}
+
+.room:hover {
+  cursor: pointer;
+}
+
+.butt {
+  margin-left: 10px;
+  margin-bottom: 10px !important;
+}
+
+.chatroom {
+  color: black;
+  padding-left: 10px;
+  margin-bottom: 50px;
+  width: 80%;
+  margin-left: 20%;
+
+}
+
+.username {
   font-weight: bold;
 }
 
-p.time {
+.time {
   font-size: 75%;
+  color: DarkSlateGray;
+}
+
+.createMessage {
+  bottom: 0;
+  right: 0;
+  width: 80%;
+  position: fixed;
+  padding: 10px;
 }
